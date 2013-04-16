@@ -38,9 +38,39 @@
     <script type="text/javascript">
       (function() {
        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-       po.src = 'https://apis.google.com/js/client:plusone.js';
+       // po.src = 'https://apis.google.com/js/client:plusone.js';
+       // onload callback
+       po.src = 'https://apis.google.com/js/plusone.js?onload=OnLoadCallback';
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-     })();
+      })();
+
+	   function signinCallback(authResult) {
+		  if (authResult['access_token']) {
+		    // Successfully authorized
+		    // Hide the sign-in button now that the user is authorized, for example:
+		    document.getElementById('signinButton').setAttribute('style', 'display: none');
+		    console.log('the button is now hidden');
+		    console.log(authResult['id_token']);
+		    console.log(authResult['access_token']);
+		  } else if (authResult['error']) {
+		    // There was an error.
+		    // Possible error codes:
+		    //   "access_denied" - User denied access to your app
+		    //   "immediate_failed" - Could not automatially log in the user
+		    console.log('There was an error: ' + authResult['error']);
+		  }
+		}
+
+			// authResult
+			// {
+			//   "id_token": the user ID,
+			//   "access_token": the access token,
+			//   "expires_in": the validity of the tokens, in seconds,
+			//   "error": The OAuth2 error type if problems occurred,
+			//   "error_description": an error message if problems occurred
+			// }
+
+
     </script>
 
 </body>

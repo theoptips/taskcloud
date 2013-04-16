@@ -19,7 +19,7 @@ Taskcloud::Application.routes.draw do
   resources :tasks
   resources :categories, :only => [:show] 
 
-  root :to => 'task#index'
+  root :to => 'tasks#index'
 
 
   # The priority is based upon order of creation:

@@ -26,10 +26,10 @@ class UsersController < ApplicationController
   def new
     @user = User.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
-    end
+    # respond_to do |format|
+    #   format.html # new.html.erb
+    #   format.json { render json: @user }
+    # end
   end
 
   # GET /users/1/edit
@@ -41,6 +41,12 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    
+    # if @user.save
+    #   redirect_to @user, notice: "User was successfully created."
+    # else
+    #   render action: "new"
+    # end
 
     respond_to do |format|
       if @user.save

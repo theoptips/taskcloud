@@ -28,6 +28,14 @@
 							This is the content details. This is the content details. This is the content details.
 						</p>
 
+						<!-- <img src="http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyC2KOsQxNCeVM1UENqASRS_MI0lgeXPGmo&size=400x300&sensor=false&markers=3000+Van+Ness,+San+Francisco,+CA" alt="3000 Van Ness, San Francisco, CA"/> -->
+						<img src="http://maps.googleapis.com/maps/api/staticmap?size=400x300&sensor=false&markers=3000+Van+Ness,+San+Francisco,+CA" alt="3000 Van Ness, San Francisco, CA"/>
+						<p id="address">
+							3000 Van Ness, San Francisco, CA
+						</p>
+
+						<img src="http://maps.googleapis.com/maps/api/staticmap?size=400x300&sensor=false&markers=1050+Van+Ness,+San+Francisco,+CA" alt="3000 Van Ness, San Francisco, CA"/>
+
 						<% if @task.avatar?  %>
 							<span class="label label-info">Attachment</span>
 							<%= link_to @task.avatar_file_name, @task.avatar.url %>
