@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416224552) do
+ActiveRecord::Schema.define(:version => 20130416225248) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :limit => 45
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(:version => 20130416224552) do
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
     t.string   "encrypted_password", :limit => 45
-    t.string   "password_salt",      :limit => 45
     t.string   "salt"
   end
 
