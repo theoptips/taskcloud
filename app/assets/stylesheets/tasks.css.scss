@@ -1,0 +1,79 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+.tasknav_bar {
+	margin:0px;
+	border-radius: 0px;
+	background-color: #217D21;
+
+}
+
+.addtask_bar{
+	background-color: LightCoral;
+	background-image:none;
+	border-radius: 0px;
+	border:none;
+	padding: 15px;
+
+
+}
+
+.tasknav_bar_inner{
+	border-radius: 0px;
+	background-image:none;
+	border:none;
+
+	
+}
+
+.brand:hover {
+	background-color: white;
+}
+
+#ul_tasks li{
+	border: 1px solid silver;
+	list-style-type:none;
+	background-color:white;
+	opacity: .8;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
+
+	img{
+		border: 3px solid silver;
+	}
+
+
+}
+
+body{
+	background-color: LightGrey;
+}
+
+.color_gray{
+	color:#808080;
+}
+
+#task_details_title{
+	border-bottom: 10px solid #808080;
+}
+
+
+#task_details {
+	border: 1px solid silver;
+	list-style-type:none;
+	background-color:white;
+	opacity: .8;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
+	min-height:500px;
+
+	img{
+		border: 3px solid silver;
+	}
+}
+

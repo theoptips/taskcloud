@@ -1,0 +1,33 @@
+<!-- <h1>Tasks#index</h1>
+<p>Find me in app/views/tasks/index.html.erb</p>
+ -->
+
+<div class="container-fluid">
+  <div class="row-fluid">
+  	<h3 class="color_gray">ToDos</h3>
+    <div class="span8 bordered_dashed">
+
+      	<ul id="ul_tasks">
+		<% @tasks.each do |task| %>
+		<li>
+			<div class="span6">
+				<input type="checkbox" />
+				<img src="/assets/star.png"><img src="/assets/blank_star.png">
+				<%= task.title%>
+			</div>
+			<div>
+				<img class="offset3" src="/assets/rails.png">
+			</div>
+		</li>
+		<% end %>
+		</ul>
+    </div>
+    <div class="span2">
+      <h3 class="color_gray">Categories</h3>
+      <ul>
+      	<li><a href="">Category 1</a></li>
+      	<li><a href="">Category 2</a></li>      
+      </ul>
+    </div>
+  </div>
+</div>

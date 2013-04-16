@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 
+  category: 
+  title: MyString
+  content: MyText
+  is_complete: 1
+  is_starred: 1
+  thumbnail_url: MyString
+  due_date: 2013-04-15
+  priority: 1
+
+two:
+  user: 
+  category: 
+  title: MyString
+  content: MyText
+  is_complete: 1
+  is_starred: 1
+  thumbnail_url: MyString
+  due_date: 2013-04-15
+  priority: 1
