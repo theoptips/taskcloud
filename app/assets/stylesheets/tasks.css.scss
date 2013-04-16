@@ -77,3 +77,23 @@ body{
 	}
 }
 
+#newtask_long_form{
+	margin-left: 50px;
+	width:500px;
+	border: 5px dashed silver;
+	padding: 20px;
+	.radio{
+		display:inline-block;
+		margin-right: 10px;
+	}
+	#task_content{
+		height: 200px;
+		width:350px;
+		overflown: auto;
+	}
+}
+
+.left_margin_20{
+	margin-left: 20px;
+}
+

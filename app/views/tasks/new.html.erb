@@ -1,2 +1,13 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<h3 class="color_gray left_margin_20">Add Task - Long Form</h3>
+<%= simple_form_for @task, :html => {:multipart => true, :id => "newtask_long_form"} do |f| %>
+	<%= f.input :title %>
+	<%# need to include a category selection %>
+	<%= f.input :content, placeholder: 'Enter any relevant details regarding the task here.' %>
+	<%= f.input :is_complete %>
+	<%= f.input :is_starred %>
+	<%= f.input :thumbnail_url, hint: 'Copy and paste online image url here.' %>
+	<%= f.input :due_date, hint: 'Please select a due date.', input_html: { class: 'span1' }%>
+	<%= f.input :priority, collection: 1..5, as: :radio_buttons %>
+	<%= f.file_field :avatar %>
+	<%= f.button :submit %>
+<% end %>

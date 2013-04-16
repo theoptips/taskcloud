@@ -27,7 +27,13 @@
 							This is the content details. This is the content details. This is the content details. 
 							This is the content details. This is the content details. This is the content details.
 						</p>
-						<button>Upload Image</button>
+
+						<% if @task.avatar?  %>
+							<span class="label label-info">Attachment</span>
+							<%= link_to @task.avatar_file_name, @task.avatar.url %>
+						<% else %>
+							<button>Upload Image</button>
+						<% end %>
 					</div>
 					<!-- <input type="checkbox" /> -->
 					<!-- <img src="/assets/star.png"> -->			

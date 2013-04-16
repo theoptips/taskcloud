@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416001239) do
+ActiveRecord::Schema.define(:version => 20130416063446) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :limit => 45
@@ -24,13 +24,17 @@ ActiveRecord::Schema.define(:version => 20130416001239) do
     t.integer  "category_id"
     t.string   "title"
     t.text     "content"
-    t.integer  "is_complete",   :limit => 1
-    t.integer  "is_starred",    :limit => 1
+    t.integer  "is_complete",         :limit => 1
+    t.integer  "is_starred",          :limit => 1
     t.string   "thumbnail_url"
     t.date     "due_date"
-    t.integer  "priority",      :limit => 1
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.integer  "priority",            :limit => 1
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "tasks", ["category_id"], :name => "index_tasks_on_category_id"
