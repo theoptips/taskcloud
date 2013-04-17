@@ -45,6 +45,10 @@ class UsersController < ApplicationController
         # redirect_to @user, notice: "User was successfully created."
         # render :text => "User was successfully created."
         # NEED TO SET NEW SESSIONS!!
+        # taken from signin and start a new session
+        user = User.find_by_email(params[:user][:email])
+        sign_in user
+        redirect_to user
       else
         flash[:error] = "Registeration was not successful."
         render action: 'new'
@@ -93,17 +97,12 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     if sign_in? 
+      @user = User.find(params[:id])
+      @user.destroy
+      redirect_to users_path
     else
       flash[:error] = "Please sign in first."
       redirect_to signin_path
-    end
-
-    @user = User.find(params[:id])
-    @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
     end
   end
 end
