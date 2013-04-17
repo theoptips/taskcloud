@@ -54,5 +54,12 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @task = Task.find(params[:id])
+    if (@task.user_id = session[:user_id])
+      @task.destroy
+      redirect_to tasks_path
+    else
+      render :text => "You don't have the permission to delete this task."
+    end
   end
 end

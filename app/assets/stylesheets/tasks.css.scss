@@ -39,7 +39,7 @@
 	background-color: white;
 }
 
-#ul_tasks li{
+#ul_tasks > li{
 	border: 1px solid silver;
 	list-style-type:none;
 	background-color:white;
@@ -53,6 +53,12 @@
 		border: 3px solid silver;
 		max-height: 75px;
 		max-width: 100px;
+	}
+
+	#ul_task_utilities li
+	{
+		display:inline;
+		list-style-type: none;
 	}
 
 

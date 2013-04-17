@@ -37,6 +37,12 @@
 
 					<%#= task.title%>
 					<h6><%= task.title%></h6>
+					<ul id="ul_task_utilities">
+						<li><%= link_to 'DELETE |', task_path(task.id), method: :delete, confirm: 'are you sure?' %></li>
+						<li><%= link_to 'MARK |' %></li>
+						<li><%= link_to 'EDIT |' %></li>
+						<li></li>
+					</ul>
 				</div>
 				<div>
 					<!-- <img id="thumbnail_rails" class="offset3" src="/assets/rails.png"> -->
