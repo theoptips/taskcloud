@@ -1,25 +1,36 @@
 Taskcloud::Application.routes.draw do
-  get "categories/show"
+  # get "sessions/new"
 
-  get "tasks/index"
+  # get "sessions/create"
 
-  get "tasks/show"
+  # get "sessions/destroy"
 
-  get "tasks/new"
+  # get "categories/show"
 
-  get "tasks/edit"
+  # get "tasks/index"
 
-  get "tasks/create"
+  # get "tasks/show"
 
-  get "tasks/update"
+  # get "tasks/new"
 
-  get "tasks/destroy"
+  # get "tasks/edit"
+
+  # get "tasks/create"
+
+  # get "tasks/update"
+
+  # get "tasks/destroy"
 
   resources :users
   resources :tasks
   resources :categories, :only => [:show] 
+  resources :sessions, :only => [:new, :create, :destroy]
 
   root :to => 'tasks#index'
+
+  match "/signup", :to => 'users#new'
+  match "/signin", :to => 'sessions#new'
+  match "/signout", :to => 'sessions#destroy'
 
 
   # The priority is based upon order of creation:
