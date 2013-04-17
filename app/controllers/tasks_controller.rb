@@ -2,6 +2,8 @@ class TasksController < ApplicationController
   def index
     if sign_in?
       @tasks = Task.order('created_at desc').all
+      @tasks = User.find(session[:user_id]).tasks.order('created_at desc').all
+      @categories = Category.all
     else
       flash[:error] = "Please sign in first."
       redirect_to signin_path
@@ -31,9 +33,14 @@ class TasksController < ApplicationController
 
   def create
     if sign_in?
-      @task = Task.new(params[:task])
+      @task = Task.new
+      @task.category = Category.find_by_id(params[:task][:category_id])
+      @task.title = params[:task][:title]
+      @task.user = User.find(session[:user_id])
+      @task.thumbnail_url = '/assets/rails.png'
+
       if @task.save
-        render :text => "Successful!"
+        redirect_to tasks_path
       else
         render :text => "Failed!"
       end

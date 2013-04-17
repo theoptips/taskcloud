@@ -1,34 +1,59 @@
 <!-- <h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
- -->
+<p>Find me in app/views/tasks/index.html.erb</p>-->
+<%#= sign_in? %>
+<div class="navbar">
+	<div class="navbar-inner addtask_bar">
+	  	<!-- <form>
+	  		<select class="span2">
+	  			<option>Category 1</option>
+	  			<option>Category 2</option>
+	  			<%# @categories.each do |category|%>
+	  			<option><%#= category.name %></option>
+	  			<%#	end %>
+	  		</select>
+	  		<input type="text" placeholder="Add Task Title"/>
+	  		<input type="submit" value="Add Task" class="btn btn-info"/>
+	  	</form> -->
+	  	<%= simple_form_for(:task, :url => tasks_path,  :html => {:id => 'sform_addtask_bar'}) do |f| %>
+	  		<%= f.input :category_id, as: :select, selected: @categories, collection: @categories, 
+	  			label: false, 
+	  			input_html: {class: 'span2'}  %>
+			<%= f.input :title, label: false, placeholder: "Add task title here" %>
+			<%= f.button :submit, {class: 'button btn btn-info', value: 'Add Task'} %>
+		<% end %>
+  	</div>
+</div> <!--end of add task nav-->
 
- <%= sign_in? %>
-	<div class="container-fluid">
+<div class="container-fluid">
 	<div class="row-fluid">
 		<h3 class="color_gray">ToDos</h3>
-	<div class="span8 bordered_dashed">
+		<div class="span8 bordered_dashed">
+		  	<ul id="ul_tasks">
+			<% @tasks.each do |task| %>
+			<li>
+				<div class="span6">
+					<input type="checkbox" />
+					<img src="/assets/star.png"><img src="/assets/blank_star.png">
 
-	  	<ul id="ul_tasks">
-		<% @tasks.each do |task| %>
-		<li>
-			<div class="span6">
-				<input type="checkbox" />
-				<img src="/assets/star.png"><img src="/assets/blank_star.png">
-				<%= task.title%>
-			</div>
-			<div>
-				<img class="offset3" src="/assets/rails.png">
-			</div>
-		</li>
-		<% end %>
-		</ul>
-	</div>
-	<div class="span2">
-	  <h3 class="color_gray">Categories</h3>
-	  <ul>
-	  	<li><a href="">Category 1</a></li>
-	  	<li><a href="">Category 2</a></li>      
-	  </ul>
-	</div>
-	</div>
-	</div>
+					<%#= task.title%>
+					<h6><%= task.title%></h6>
+				</div>
+				<div>
+					<!-- <img id="thumbnail_rails" class="offset3" src="/assets/rails.png"> -->
+					<img id="thumbnail_rails" class="offset3" src="<%= task.thumbnail_url %>">
+				</div>
+			</li>
+			<% end %>
+			</ul>
+		</div>
+
+		<div class="span2">
+		  <h3 class="color_gray">Categories</h3>
+		  <ul>
+		  	<% @categories.each do |category| %>
+		  	<li><%= link_to category.name, category_path(category.id) %></li>     
+		  	<% end %>
+		  </ul>
+		</div> <!--end of category column-->
+	</div><!--end of row-fluid-->
+</div><!--end of container-->

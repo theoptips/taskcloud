@@ -18,7 +18,13 @@
 	border:none;
 	padding: 15px;
 
+	div {
+		display: inline;
+	}
 
+	input[value="Add Task"]{
+		margin-bottom: 10px;
+	}
 }
 
 .tasknav_bar_inner{
@@ -41,9 +47,12 @@
 	margin: 5px;
 	padding: 5px;
 	border-radius: 5px;
+	min-height: 80px;
 
 	img{
 		border: 3px solid silver;
+		max-height: 75px;
+		max-width: 100px;
 	}
 
 
@@ -97,3 +106,6 @@ body{
 	margin-left: 20px;
 }
 
+.task_detail_thumbnail{
+	float:right;
+}

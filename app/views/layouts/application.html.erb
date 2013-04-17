@@ -15,7 +15,7 @@
 	      <!-- <li class="active"><a href="#">Home</a></li> -->
 	      <li><%= link_to "Lists", tasks_path %></li> 
 	      <li><%= link_to "Dashboard", category_path(Category.first) %></li>
-	      
+
 	      <% if sign_in? %>
 		      <li><%= link_to "Log Out", signout_path %></li>	
 		  <% else %>
@@ -23,19 +23,7 @@
 		  <% end %>
 	    </ul>
 	  </div>
-	</div>
-	<div class="navbar">
-	  <div class="navbar-inner addtask_bar">
-	  	<form>
-	  		<select class="span2">
-	  			<option>Category 1</option>
-	  			<option>Category 2</option>
-	  		</select>
-	  		<input type="text" placeholder="Add Task Title"/>
-	  		<input type="submit" value="Add Task" class="btn btn-info"/>
-	  	</form>
-	  </div>
-	</div>
+	</div> <!--end of top nav-->
 
 <%= yield %>
 
