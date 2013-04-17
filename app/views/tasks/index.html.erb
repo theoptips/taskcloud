@@ -2,12 +2,13 @@
 <p>Find me in app/views/tasks/index.html.erb</p>
  -->
 
-<div class="container-fluid">
-  <div class="row-fluid">
-  	<h3 class="color_gray">ToDos</h3>
-    <div class="span8 bordered_dashed">
+ <%= sign_in? %>
+	<div class="container-fluid">
+	<div class="row-fluid">
+		<h3 class="color_gray">ToDos</h3>
+	<div class="span8 bordered_dashed">
 
-      	<ul id="ul_tasks">
+	  	<ul id="ul_tasks">
 		<% @tasks.each do |task| %>
 		<li>
 			<div class="span6">
@@ -21,13 +22,13 @@
 		</li>
 		<% end %>
 		</ul>
-    </div>
-    <div class="span2">
-      <h3 class="color_gray">Categories</h3>
-      <ul>
-      	<li><a href="">Category 1</a></li>
-      	<li><a href="">Category 2</a></li>      
-      </ul>
-    </div>
-  </div>
-</div>
+	</div>
+	<div class="span2">
+	  <h3 class="color_gray">Categories</h3>
+	  <ul>
+	  	<li><a href="">Category 1</a></li>
+	  	<li><a href="">Category 2</a></li>      
+	  </ul>
+	</div>
+	</div>
+	</div>

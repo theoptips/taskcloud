@@ -1,25 +1,25 @@
-<h1>New user</h1>
-<!-- Google Plus -->
-<span id="signinButton">
-  <span
-    class="g-signin"
-    data-callback="signinCallback"
-    data-clientid="437586832432-i05mhukqm80agkqrt7861mdh1gg06b8t.apps.googleusercontent.com"
-    data-cookiepolicy="single_host_origin"
-    data-requestvisibleactions="http://schemas.google.com/AddActivity"
-    data-scope="https://www.googleapis.com/auth/plus.login">
+<div class="container">
+  <h1>Register</h1>
+  <!-- Google Plus -->
+  <span id="signinButton">
+    <span
+      class="g-signin"
+      data-callback="signinCallback"
+      data-clientid="437586832432-i05mhukqm80agkqrt7861mdh1gg06b8t.apps.googleusercontent.com"
+      data-cookiepolicy="single_host_origin"
+      data-requestvisibleactions="http://schemas.google.com/AddActivity"
+      data-scope="https://www.googleapis.com/auth/plus.login">
+    </span>
   </span>
-</span>
 
-<%#= render 'form' %>
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :password%>
+    <%= f.input :password_confirmation %>
+    <%= f.button :submit %>
+  <% end %>
 
-<%= simple_form_for @user do |f| %>
-	<%= f.input :first_name %>
-	<%= f.input :last_name %>
-	<%= f.input :email %>
-	<%= f.input :password%>
-	<%= f.input :password_confirmation %>
-	<%= f.button :submit %>
-<% end %>
-
-<%= link_to 'Back', users_path %>
+  <%= link_to 'Back', users_path %>
+</div>

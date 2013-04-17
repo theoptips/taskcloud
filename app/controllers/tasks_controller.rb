@@ -1,27 +1,46 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.order('created_at desc').all
+    if sign_in?
+      @tasks = Task.order('created_at desc').all
+    else
+      flash[:error] = "Please sign in first."
+      redirect_to signin_path
+    end
   end
 
   def show
-    @task = Task.find(params[:id])
+    if sign_in?
+      @task = Task.find(params[:id])
+    else
+      flash[:error] = "Please sign in first."
+      redirect_to signin_path
+    end
   end
 
   def new
-    @task = Task.new
+    if sign_in?
+      @task = Task.new
+    else
+      flash[:error] = "Please sign in first."
+      redirect_to signin_path
+    end
   end
 
   def edit
   end
 
   def create
-    @task = Task.new(params[:task])
-    if @task.save
-      render :text => "Successful!"
+    if sign_in?
+      @task = Task.new(params[:task])
+      if @task.save
+        render :text => "Successful!"
+      else
+        render :text => "Failed!"
+      end
     else
-      render :text => "Failed!"
+      flash[:error] = "Please sign in first."
+      redirect_to signin_path
     end
-
   end
 
   def update
