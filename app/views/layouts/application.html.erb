@@ -38,13 +38,15 @@
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
       })();
 
+      //trying to access token customized
+
 	   function signinCallback(authResult) {
 		  if (authResult['access_token']) {
 		    // Successfully authorized
 		    // Hide the sign-in button now that the user is authorized, for example:
 		    document.getElementById('signinButton').setAttribute('style', 'display: none');
-		    console.log('the button is now hidden');
-		    console.log(authResult);
+		    // console.log('the button is now hidden');
+		    // console.log(authResult);
 		    makeApiCall();
 		  } else if (authResult['error']) {
 		    // There was an error.
@@ -57,16 +59,34 @@
 
 
 		// Load the API and make an API call.  Display the results on the screen.
+      // function makeApiCall() {
+      //   gapi.client.load('plus', 'v1', function() {
+      //     var request = gapi.client.plus.people.get({
+      //       'userId': 'me'
+      //     });
+      //     request.execute(function(resp) {
+      //       console.log(resp);
+      //     });
+      //   });
+      // }
       function makeApiCall() {
-        gapi.client.load('plus', 'v1', function() {
-          var request = gapi.client.plus.people.get({
-            'userId': 'me'
-          });
-          request.execute(function(resp) {
-            console.log(resp);
-          });
-        });
-      }
+	  gapi.client.load('plus', 'v1', function() {
+	      var request = gapi.client.plus.people.get({
+	          'userId': 'me'
+	            });
+	      request.execute(function(resp) {
+	          var heading = document.createElement('h4');
+	          var image = document.createElement('img');
+	          image.src = resp.image.url;
+	          heading.appendChild(image);
+	          heading.appendChild(document.createTextNode(resp.displayName));
+
+	          document.getElementById('content').appendChild(heading);
+	        });
+	    });
+	}
+
+	
 
 			// authResult
 			// {
@@ -76,8 +96,34 @@
 			//   "error": The OAuth2 error type if problems occurred,
 			//   "error_description": an error message if problems occurred
 			// }
+		function disconnectUser(access_token) {
+		  var revokeUrl = 'https://accounts.google.com/o/oauth2/revoke?token=' +
+		      access_token;
 
-
+		  // Perform an asynchronous GET request.
+		  $.ajax({
+		    type: 'GET',
+		    url: revokeUrl,
+		    async: false,
+		    contentType: "application/json",
+		    dataType: 'jsonp',
+		    success: function(nullResponse) {
+		      // Do something now that user is disconnected
+		      // The response is always undefined.
+		    },
+		    error: function(e) {
+		      // Handle the error
+		      // console.log(e);
+		      // You could point users to manually disconnect if unsuccessful
+		      // https://plus.google.com/apps
+		    }
+		  });
+		}
+		// Could trigger the disconnect on a button click
+		// $('#revokeButton').click(disconnectUser);
+		$('#revokeButton').click(function(){
+			disconnectUser;
+		});
     </script>
 
 </body>

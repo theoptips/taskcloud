@@ -1,4 +1,10 @@
 <div class="container">
+	<div id="content">
+		<!--<h4></h4>
+		<img src=""/>-->
+
+	</div>
+
 	<p id="notice"><%= notice %></p>
 
 	<p>
@@ -24,5 +30,25 @@
 
 	<%= link_to 'Edit', edit_user_path(@user) %> |
 	<%= link_to 'Back', users_path %>
+	<button id="revokeButton">Revoke Google+ Access</button>
+	<span id="signinButton">
+    <span
+      class="g-signin"
+      data-callback="signinCallback"
+      data-clientid="437586832432-i05mhukqm80agkqrt7861mdh1gg06b8t.apps.googleusercontent.com"
+      data-cookiepolicy="single_host_origin"
+      data-requestvisibleactions="http://schemas.google.com/AddActivity"
+      data-scope="https://www.googleapis.com/auth/plus.login">
+    </span>
+  </span>
 
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		
+
+		
+	});
+</script>
