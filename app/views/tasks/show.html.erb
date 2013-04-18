@@ -21,6 +21,7 @@
 							This is the content details. This is the content details. This is the content details.
 						</p>
 						-->
+						<h6><%= link_to "EDIT DETAILS", edit_task_path(@task.id)  %></h6>
 						<p><%= @task.content %></p>
 						<!-- <img src="http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyC2KOsQxNCeVM1UENqASRS_MI0lgeXPGmo&size=400x300&sensor=false&markers=3000+Van+Ness,+San+Francisco,+CA" alt="3000 Van Ness, San Francisco, CA"/> -->
 
@@ -29,7 +30,8 @@
 							<span class="label label-info">Attachment</span>
 							<%= link_to @task.avatar_file_name, @task.avatar.url %>
 							<% else %>
-								<button>Upload Image</button>
+								<!-- <button>Upload Image</button> -->
+								<span class="label">No Attachments found</span>
 							<% end %>
 						</div>	
 

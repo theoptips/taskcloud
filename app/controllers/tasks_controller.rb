@@ -29,7 +29,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-    # @task = Task.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def create
@@ -52,6 +52,21 @@ class TasksController < ApplicationController
   end
 
   def update
+    if sign_in?
+      @task = Task.find(params[:id])
+      @task.title = params[:task][:title]
+      @task.content = params[:task][:content]
+      @task.thumbnail_url = params[:task][:thumbnail_url]
+
+      if @task.save
+        redirect_to task_path(@task)
+      else
+        render action: 'edit'
+      end
+    else
+      flash[:error] = "Please sign in first."
+      redirect_to signin_path
+    end
   end
 
   def destroy
