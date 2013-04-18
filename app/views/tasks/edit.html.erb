@@ -1,10 +1,15 @@
 <div class="container">
-	<h3 class="color_gray left_margin_20">Edit Task - Form</h3>
+	<h3 class="color_gray left_margin_20">Edit Task Form</h3>
 	<%= simple_form_for @task, :html => {:multipart => true, :id => "edittask_long_form"} do |f| %>
 		<%= f.input :title %>
 		<%= f.input :content, placeholder: 'Enter any relevant details regarding the task here.' %>
-		<%= f.input :is_complete %>
-		<%= f.input :is_starred %>
+		<%#= f.input :is_complete %>
+		<%#= f.input :is_complete, as: :radio_buttons, collection: 0..1 %>
+		<label>Completed?</label>
+		<%= f.collection_radio_buttons :is_complete, [[1, 'Yes'] ,[0, 'No']], :first, :last %>
+		<%#= f.input :is_starred %>
+		<label>Important?</label>
+		<%= f.collection_radio_buttons :is_starred, [[1, 'Yes'] ,[0, 'No']], :first, :last %>
 		<%= f.input :thumbnail_url, hint: 'You can copy and paste online image url here.' %>
 		<%#= f.input :due_date, hint: 'Please select a due date.', input_html: { class: 'span1' }%>
 		<%= f.input :priority, collection: 1..5, as: :radio_buttons %>

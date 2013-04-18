@@ -26,14 +26,26 @@
 						<!-- <img src="http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyC2KOsQxNCeVM1UENqASRS_MI0lgeXPGmo&size=400x300&sensor=false&markers=3000+Van+Ness,+San+Francisco,+CA" alt="3000 Van Ness, San Francisco, CA"/> -->
 
 						<div>
-							<% if @task.avatar?  %>
-							<span class="label label-info">Attachment</span>
-							<%= link_to @task.avatar_file_name, @task.avatar.url %>
-							<% else %>
-								<!-- <button>Upload Image</button> -->
-								<span class="label">No Attachments found</span>
-							<% end %>
-						</div>	
+							<ul>
+								<% if @task.avatar?  %>
+									<li><span class="label label-info">Attachment</span></li>
+									<li><%= link_to @task.avatar_file_name, @task.avatar.url %></li>
+									<%= image_tag @task.avatar.url(:medium) %>
+								
+								<% else %>
+									<!-- <button>Upload Image</button> -->
+									<li><span class="label">No Attachment</span></li>
+								<% end %>
+
+								
+								<li><span class="label label-warning">Priority: <%=@task.priority %></li>
+								<% if @task.is_starred = 1 %>
+									<li><span class="label label-important">Important</li>
+								<% end %>
+							</ul>
+						</div>
+
+
 
 						<img src="http://maps.googleapis.com/maps/api/staticmap?size=400x300&sensor=false&markers=3000+Van+Ness,+San+Francisco,+CA" alt="3000 Van Ness, San Francisco, CA"/>
 						<h4>Address</h4>
@@ -62,6 +74,19 @@
       	<li>Category: </li> 
       	<li>Completed? </li>
       	<li>Is Important?</li>
+      	<% if @task.is_complete == 1 %>
+	      	<li><span class="label label-success">COMPLETED!</li>
+      	<% else %>
+      		<li><span class="label label-warning">NEW</li>
+      	<% end %>
+      	<% if @task.is_starred = 1 %>
+			<li><span class="label label-important">Important</li>
+		<% end %>
+      	<li><span class="label label-info">Category: <%= @task.category.name %></span></li>	
+		<li><span class="label label-warning">Priority: <%=@task.priority %></li>
+		
+
+
       </ul>
     </div>
   </div>

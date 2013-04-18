@@ -32,16 +32,27 @@
 			<% @tasks.each do |task| %>
 			<li>
 				<div class="span6">
-					<input type="checkbox" />
-					<img src="/assets/star.png"><img src="/assets/blank_star.png">
+					<!-- <input type="checkbox" /> -->
+					<% if task.is_complete != 1 %>
+						<img id="checkbox_img" class= "checkbox_img" src="">
+					<% else %>
+						<img src="/assets/complete.png" class= "checkbox_img">
+					<% end %>
+					<% if task.is_starred != 1 %>
+						<img src="/assets/blank_star.png" class= "checkbox_img">
+					<% else %>
+						<img src="/assets/star.png" class= "checkbox_img">	
+					<% end %>				
+					<h5><%= task.title%></h5>
+	
 
 					<%#= task.title%>
-					<h6><%= task.title%></h6>
+					
 					<ul id="ul_task_utilities">
 						<li><%= link_to 'DELETE |', task_path(task.id), method: :delete, confirm: 'are you sure?' %></li>
 						<li><%= link_to 'MARK |' %></li>
 						<li><%= link_to 'VIEW |', task_path(task.id) %></li>
-						<li></li>
+						<li><span class="label label-info"><%= task.category.name %></span></li>
 					</ul>
 				</div>
 				<div>

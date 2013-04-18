@@ -39,6 +39,7 @@ class TasksController < ApplicationController
       @task.title = params[:task][:title]
       @task.user = User.find(session[:user_id])
       @task.thumbnail_url = '/assets/rails.png'
+      @task.avatar = params[:task][:avatar]
 
       if @task.save
         redirect_to tasks_path
@@ -52,11 +53,16 @@ class TasksController < ApplicationController
   end
 
   def update
+    # render :text => params
     if sign_in?
       @task = Task.find(params[:id])
       @task.title = params[:task][:title]
       @task.content = params[:task][:content]
       @task.thumbnail_url = params[:task][:thumbnail_url]
+      @task.is_complete = params[:task][:is_complete]
+      @task.is_starred = params[:task][:is_starred]
+      @task.priority = params[:task][:priority]
+      @task.avatar = params[:task][:avatar]
 
       if @task.save
         redirect_to task_path(@task)
