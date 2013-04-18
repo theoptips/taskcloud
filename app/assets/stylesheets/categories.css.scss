@@ -7,52 +7,6 @@ $medium_height: 500px;
 $large_height: 600px;
 $total: 1200px;
 
-#board{ //board main area
-	background-color:white; 
-	min-height:700px; 
-	width:900px;
-	.span4{
-		background-color:LightSkyBlue; //box background
-		border-radius: 5px;
-		div{
-			//margin: 10px;
-			//background-color:white;
-			//border: 5px solid gray;
-		}
-		img{
-			border:5px solid silver;
-			width: 290px;
-		}
-		margin: 10px;
-		background-color:white;
-		border: 5px solid gray;
-	}
-	.thumbnail:first-child{
-	color:red;
-	//height: $medium_height;
-	height: $large_height;
-	}
-	.thumbnail:nth-child(2){
-	//height: $large_height;
-	height: $medium_height;
-	}
-	.thumbnail:nth-child(3){
-	color:red;
-	height: $large_height;
-	}
-	.thumbnail:nth-child(4){
-	color:red;
-	//height: $large_height;
-	height: $medium_height;
-	}
-	.thumbnail:nth-child(9){
-	color:red;
-	height: $medium_height;
-	}
-	.thumbnail{
-		display:inline;
-	}
-}
 
 #dashboard{
 	margin-left: 50px;
@@ -62,27 +16,37 @@ textarea {
 	max-height: 150px;
 }
 
-#board2{ //board main area
-	background-color:white; 
-	min-height:700px; 
-	width:900px;
+
+#board3{
+	background-color: white;
+	li {
+		list-style-type: none;
+	}
 	.span4{
-		background-color:LightSkyBlue; //box background
+		//background-color:LightSkyBlue; //box background
 		border-radius: 5px;
-		div{
-			//margin: 10px;
-			//background-color:white;
-			//border: 5px solid gray;
+		
+		li div{
+			border: 5px solid gray;
 		}
+
 		img{
 			border:5px solid silver;
 			max-width: 290px;
 
 		}
 
+		.thumbnail{
+			width: 280px;
+			img{
+				max-width: 270px;
+			}
+		}
+
 		margin: 10px;
-		background-color:white;
-		border: 5px solid gray;
+		background-color: white;
+		//border: 5px solid gray;
+		//padding:2px;
 	}
 
 }

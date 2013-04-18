@@ -1,188 +1,58 @@
-<!-- <h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p> -->
-<div class="container-fluid" id="dashboard">
-  <div class="row-fluid">
-  	<div class="row">
-  		<h3 class="color_gray">Select a Category</h3>
-  		<select>
-  			<!-- <option>Category 1</option>
-  			<option>Category 2</option> -->
-        <% @categories.each do |category| %>
-          <option><%= category.name %></option>>
-        <% end %>
-  		</select>
-  	</div>
-    <div>
-      <ul>
-        <% @tasks.each do |task| %>
-        <li><%= task.title %> Priority is: <%= task.priority %></li>
-        <% end %> 
-      </ul>
-    </div>
-  	<!-- <div class="row">
-  		<div class="span12" id="board">
-  			<div class="span4">
-            <div class="thumbnail">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            
-  				
-  			</div>
-  			<div class="span4">
-          <div class="thumbnail">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-  				
-  			</div>
-  			<div class="span4">
-          <div class="thumbnail">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-  				
-  			</div>
-	  	</div>
-  	</div> -->
- 
-
-    </div>
- 
  <div class="container">
   <div class="row">
-      <div class="span12" id="board" style="width:1100px;">
+      <div class="span12" id="board3" style="width:1100px;">
             
-              <% @tasks.each do |task| %>
-              <div class="thumbnail span4">
-              <img src="<%= task.thumbnail_url %>">
-              <h3><%= task.title %> Priority is: <%= task.priority %></h3>
-              </div>
-              <% end %> 
+              
             
       
-            <div class="thumbnail span4">
+            <<!-- div class="thumbnail span4">
               <img src="http://placekitten.com/300/200" alt="cat"/>
               <h3>Thumbklajdfklajsdf</h3>
               <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail span4">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div> 
-            <div class="thumbnail span4">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail span4">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-
-            <div class="thumbnail span4">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail span4">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div> 
-            <div class="thumbnail span4">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail span4">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-
-            <div class="thumbnail span4">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail span4">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div> 
-            <div class="thumbnail span4">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
-            <div class="thumbnail span4">
-              <img src="http://placekitten.com/300/200" alt="cat"/>
-              <h3>Thumbklajdfklajsdf</h3>
-              <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
+            </div> -->
+            
+            <ul class="span4">
+              <% @tasks.each do |task| %>
+              <li>
+                <div class="thumbnail span4">
+                <img src="<%= task.thumbnail_url %>">
+                <h3><%= task.title %> Priority is: <%= task.priority %></h3>
+                </div>
+              </li>
+              <% end %> 
+            </ul>
+            <ul class="span4">
+              <% @tasks.each do |task| %>
+              <li>
+                <div class="thumbnail span4">
+                <img src="<%= task.thumbnail_url %>">
+                <h3><%= task.title %> Priority is: <%= task.priority %></h3>
+                </div>
+              </li>
+              <% end %> 
+            </ul>
+            <ul class="span4">
+               <% @tasks.each do |task| %>
+              <li>
+                <div class="thumbnail span4">
+                <img src="<%= task.thumbnail_url %>">
+                <h3><%= task.title %> Priority is: <%= task.priority %></h3>
+                </div>
+              </li>
+              <% end %>   
+            </ul>
       </div>
       <div class="span12" style="width:1100px;background-color:white;" id="board2">
             
-              <% @tasks.each do |task| %>
-              <div class="thumbnail span4">
-              <img src="<%= task.thumbnail_url %>">
-              <!--<h3><%#= task.title %> Priority is: <%= task.priority %></h3>-->
-               <h3><%= link_to task.title, task_path(task.id) %> Priority is: <%= task.priority %></h3>
-              </div>
-              <% end %> 
+              <%# @tasks.each do |task| %>
+              <!-- <div class="thumbnail span4">
+              <img src="<%#= task.thumbnail_url %>"> -->
+              <!--<h3><%#= task.title %> Priority is: <%#= task.priority %></h3>-->
+               <!-- <h3><%#= link_to task.title, task_path(task.id) %> Priority is: <%#= task.priority %></h3>
+              </div> -->
+              <%# end %> 
             
-      
+      <!-- 
             <div class="thumbnail span4">
               <img src="http://placekitten.com/300/200" alt="cat"/>
               <h3>Thumbklajdfklajsdf</h3>
@@ -244,7 +114,7 @@
               <img src="http://placekitten.com/300/200" alt="cat"/>
               <h3>Thumbklajdfklajsdf</h3>
               <p class="p_color">aksdjfklajdfkldjfklfjd</p>
-            </div>
+            </div> -->
       </div>
   </div>
  </div>
