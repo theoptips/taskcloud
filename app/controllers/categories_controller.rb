@@ -7,7 +7,8 @@ class CategoriesController < ApplicationController
       @columns[1] = Array.new()
       @columns[2] = Array.new()
       @tasks.each do |task|
-        random = rand(0..2)
+        #random = rand(0..2) # rand(0..2) returns floats, heroku error
+        random = rand(2)
         @columns[random].push(task)
       end
 
