@@ -2,10 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$small_height: 300px;
-$medium_height: 500px;
+$small_height: 250px;
+$medium_height: 350px;
 $large_height: 600px;
-$total: 1200px;
 
 
 #dashboard{
@@ -47,6 +46,18 @@ textarea {
 		background-color: white;
 		//border: 5px solid gray;
 		//padding:2px;
+	}
+	.small_box{
+		height:$small_height;
+		overflow: auto;
+	}
+	.medium_box{
+		height:$medium_height;
+		overflow: auto;
+	}
+	.large_box{
+		height:$large_height;
+		overflow: auto;
 	}
 
 }

@@ -12,17 +12,9 @@
             </div> -->
             
             <ul class="span4">
-              <% @columns[0].each do |task| %>
+              <% @tasks.each do |task| %>
               <li>
-                <% if task.priority == nil %>
-                   <div class="thumbnail span4 small_box">
-                <% elsif task.priority > 3 %>
-                  <div class="thumbnail span4 large_box">
-                <% elsif task.priority < 4 && task.priority >1 %>
-                  <div class="thumbnail span4 medium_box">
-                <% else %>
-                  <div class="thumbnail span4 small_box">
-                <% end %>
+                <div class="thumbnail span4">
                 <img src="<%= task.thumbnail_url %>">
                 <h3><%= task.title %> Priority is: <%= task.priority %></h3>
                 </div>
@@ -30,17 +22,9 @@
               <% end %> 
             </ul>
             <ul class="span4">
-              <% @columns[1].each do |task| %>
+              <% @tasks.each do |task| %>
               <li>
-                <% if task.priority == nil %>
-                   <div class="thumbnail span4 small_box">
-                <% elsif task.priority > 3 %>
-                  <div class="thumbnail span4 large_box">
-                <% elsif task.priority < 4 && task.priority >1 %>
-                  <div class="thumbnail span4 medium_box">
-                <% else %>
-                  <div class="thumbnail span4 small_box">
-                <% end %>
+                <div class="thumbnail span4">
                 <img src="<%= task.thumbnail_url %>">
                 <h3><%= task.title %> Priority is: <%= task.priority %></h3>
                 </div>
@@ -48,17 +32,9 @@
               <% end %> 
             </ul>
             <ul class="span4">
-               <% @columns[2].each do |task| %>
+               <% @tasks.each do |task| %>
               <li>
-                <% if task.priority == nil %>
-                   <div class="thumbnail span4 small_box">
-                <% elsif task.priority > 3 %>
-                  <div class="thumbnail span4 large_box">
-                <% elsif task.priority < 4 && task.priority >1 %>
-                  <div class="thumbnail span4 medium_box">
-                <% else %>
-                  <div class="thumbnail span4 small_box">
-                <% end %>
+                <div class="thumbnail span4">
                 <img src="<%= task.thumbnail_url %>">
                 <h3><%= task.title %> Priority is: <%= task.priority %></h3>
                 </div>
