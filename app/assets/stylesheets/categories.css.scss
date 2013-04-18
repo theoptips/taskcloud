@@ -8,10 +8,15 @@ $large_height: 200px;
 
 #board{ //board main area
 	background-color:white; 
-	height:700px; 
+	min-height:700px; 
 	width:900px;
 	.span4{
-		background-color:green; //box background
+		background-color:LightSkyBlue; //box background
+		border-radius: 5px;
+		div{
+			margin: 10px;
+			background-color:white;
+		}
 	}
 }
 
