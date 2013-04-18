@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416225248) do
+ActiveRecord::Schema.define(:version => 20130418115533) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :limit => 45
@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(:version => 20130416225248) do
     t.string   "first_name",         :limit => 45
     t.string   "last_name",          :limit => 45
     t.string   "email"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
-    t.string   "encrypted_password", :limit => 45
-    t.string   "salt"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.text     "encrypted_password", :limit => 45
+    t.text     "salt",               :limit => 255
   end
 
 end
