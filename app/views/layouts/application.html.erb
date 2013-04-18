@@ -17,7 +17,8 @@
 	      <li><%= link_to "Dashboard", category_path(Category.first) %></li>
 
 	      <% if sign_in? %>
-		      <li><%= link_to "Log Out", signout_path %></li>	
+	      	<li><%= link_to "Profile", user_path(session[:user_id]) %></li>
+		    <li><%= link_to "Log Out", signout_path %></li>	
 		  <% else %>
 		  	  <li><%= link_to "Sign In", signin_path %></li>
 		  <% end %>
@@ -43,8 +44,8 @@
 		    // Hide the sign-in button now that the user is authorized, for example:
 		    document.getElementById('signinButton').setAttribute('style', 'display: none');
 		    console.log('the button is now hidden');
-		    console.log(authResult['id_token']);
-		    console.log(authResult['access_token']);
+		    console.log(authResult);
+		    makeApiCall();
 		  } else if (authResult['error']) {
 		    // There was an error.
 		    // Possible error codes:
@@ -53,6 +54,19 @@
 		    console.log('There was an error: ' + authResult['error']);
 		  }
 		}
+
+
+		// Load the API and make an API call.  Display the results on the screen.
+      function makeApiCall() {
+        gapi.client.load('plus', 'v1', function() {
+          var request = gapi.client.plus.people.get({
+            'userId': 'me'
+          });
+          request.execute(function(resp) {
+            console.log(resp);
+          });
+        });
+      }
 
 			// authResult
 			// {

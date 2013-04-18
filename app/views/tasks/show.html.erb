@@ -8,10 +8,11 @@
 				<img class = "task_detail_thumbnail" class="offset3" src="<%= @task.thumbnail_url %>">
 				<div class="span8">
 					<div id="task_details_title">
-						<h3>This is a special title.</h3>
+						<!--<h3>This is a special title.</h3>-->
+						<h3><%= @task.title %></h3>
 					</div>
 					<div>
-						<p>This is the content details. This is the content details. This is the content details.This is the content details
+						<!-- <p>This is the content details. This is the content details. This is the content details.This is the content details
 							This is the content details. This is the content details. This is the content details. 
 							This is the content details. This is the content details. This is the content details.
 						</p>
@@ -19,30 +20,28 @@
 							This is the content details. This is the content details. This is the content details. 
 							This is the content details. This is the content details. This is the content details.
 						</p>
-						<p>This is the content details. This is the content details. This is the content details.This is the content details
-							This is the content details. This is the content details. This is the content details. 
-							This is the content details. This is the content details. This is the content details.
-						</p>
-
-						<p>This is the content details. This is the content details. This is the content details.This is the content details
-							This is the content details. This is the content details. This is the content details. 
-							This is the content details. This is the content details. This is the content details.
-						</p>
-
+						-->
+						<p><%= @task.content %></p>
 						<!-- <img src="http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyC2KOsQxNCeVM1UENqASRS_MI0lgeXPGmo&size=400x300&sensor=false&markers=3000+Van+Ness,+San+Francisco,+CA" alt="3000 Van Ness, San Francisco, CA"/> -->
+
+						<div>
+							<% if @task.avatar?  %>
+							<span class="label label-info">Attachment</span>
+							<%= link_to @task.avatar_file_name, @task.avatar.url %>
+							<% else %>
+								<button>Upload Image</button>
+							<% end %>
+						</div>	
+
 						<img src="http://maps.googleapis.com/maps/api/staticmap?size=400x300&sensor=false&markers=3000+Van+Ness,+San+Francisco,+CA" alt="3000 Van Ness, San Francisco, CA"/>
+						<h4>Address</h4>
 						<p id="address">
 							3000 Van Ness, San Francisco, CA
 						</p>
 
-						<img src="http://maps.googleapis.com/maps/api/staticmap?size=400x300&sensor=false&markers=1050+Van+Ness,+San+Francisco,+CA" alt="3000 Van Ness, San Francisco, CA"/>
+						<!--<img src="http://maps.googleapis.com/maps/api/staticmap?size=400x300&sensor=false&markers=1050+Van+Ness,+San+Francisco,+CA" alt="3000 Van Ness, San Francisco, CA"/>-->
 
-						<% if @task.avatar?  %>
-							<span class="label label-info">Attachment</span>
-							<%= link_to @task.avatar_file_name, @task.avatar.url %>
-						<% else %>
-							<button>Upload Image</button>
-						<% end %>
+						
 					</div>
 					<!-- <input type="checkbox" /> -->
 					<!-- <img src="/assets/star.png"> -->			

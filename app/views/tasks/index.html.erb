@@ -40,7 +40,7 @@
 					<ul id="ul_task_utilities">
 						<li><%= link_to 'DELETE |', task_path(task.id), method: :delete, confirm: 'are you sure?' %></li>
 						<li><%= link_to 'MARK |' %></li>
-						<li><%= link_to 'EDIT |' %></li>
+						<li><%= link_to 'VIEW |', task_path(task.id) %></li>
 						<li></li>
 					</ul>
 				</div>
