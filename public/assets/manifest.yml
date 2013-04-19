@@ -3,6 +3,8 @@ blank_star.png: blank_star-5bc66506af27325cf0013911757ebfb1.png
 blank_star/index.png: blank_star-5bc66506af27325cf0013911757ebfb1.png
 complete.png: complete-8e17811e894b108df34d9d8692ce8b43.png
 complete/index.png: complete-8e17811e894b108df34d9d8692ce8b43.png
+empty.png: empty-bc306ae11dc36ab9dbe00b3fa9dd8738.png
+empty/index.png: empty-bc306ae11dc36ab9dbe00b3fa9dd8738.png
 product-catalog.png: product-catalog-a54eadcd91f4c003c180674acd6ccb9e.png
 product-catalog/index.png: product-catalog-a54eadcd91f4c003c180674acd6ccb9e.png
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
