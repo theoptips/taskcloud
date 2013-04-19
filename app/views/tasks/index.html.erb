@@ -35,14 +35,18 @@
 					<div>
 						<!-- <input type="checkbox" /> -->
 						<% if task.is_complete != 1 %>
-							<img id="checkbox_img" class= "checkbox_img" src="">
+							<!-- <img id="checkbox_img" class= "checkbox_img" src=""> -->
+							<%= link_to image_tag('', :class=>'checkbox_img', :id => 'checkbox_img'), taskupdate_path(task.id) %>
 						<% else %>
-							<img src="/assets/complete.png" class= "checkbox_img">
+							<!-- <img src="/assets/complete.png" class= "checkbox_img"> -->
+							<%= link_to image_tag('/assets/complete.png', :class=>'checkbox_img'), taskupdate_path(task.id) %>
 						<% end %>
 						<% if task.is_starred != 1 %>
-							<img src="/assets/blank_star.png" class= "checkbox_img">
+							<!-- <img src="/assets/blank_star.png" class= "checkbox_img"> -->
+							<%= link_to image_tag('/assets/blank_star.png', :class=>'checkbox_img'), taskstar_path(task.id) %>
 						<% else %>
-							<img src="/assets/star.png" class= "checkbox_img">	
+							<!-- <img src="/assets/star.png" class= "checkbox_img">	 -->
+							<%= link_to image_tag('/assets/star.png', :class=>'checkbox_img'), taskstar_path(task.id) %>
 						<% end %>				
 						<h5><%= task.title%></h5>
 					</div>
@@ -53,7 +57,7 @@
 					<div>
 						<ul id="ul_task_utilities">
 							<li><%= link_to 'DELETE |', task_path(task.id), method: :delete, confirm: 'are you sure?' %></li>
-							<li><%= link_to 'MARK |' %></li>
+							<li><%= link_to 'MARK |', taskupdate_path(task.id) %></li>
 							<li><%= link_to 'VIEW |', task_path(task.id) %></li>
 							<li><span class="label label-info"><%= task.category.name %></span></li>
 						</ul>

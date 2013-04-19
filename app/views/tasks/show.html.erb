@@ -39,7 +39,7 @@
 
 								
 								<li><span class="label label-warning">Priority: <%=@task.priority %></li>
-								<% if @task.is_starred = 1 %>
+								<% if @task.is_starred == 1 %>
 									<li><span class="label label-important">Important</li>
 								<% end %>
 							</ul>
@@ -79,7 +79,7 @@
       	<% else %>
       		<li><span class="label label-warning">NEW</li>
       	<% end %>
-      	<% if @task.is_starred = 1 %>
+      	<% if @task.is_starred == 1 %>
 			<li><span class="label label-important">Important</li>
 		<% end %>
       	<li><span class="label label-info">Category: <%= @task.category.name %></span></li>	

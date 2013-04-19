@@ -32,6 +32,8 @@ Taskcloud::Application.routes.draw do
   match "/signin", :to => 'sessions#new'
   match "/signout", :to => 'sessions#destroy'
 
+  match "tasks/update/:id", :to => 'tasks#update_complete', :as => 'taskupdate' #customize name helper using :as
+  match "tasks/star/:id", :to => 'tasks#update_star', :as => 'taskstar' #customize name helper using :as
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

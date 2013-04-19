@@ -84,4 +84,27 @@ class TasksController < ApplicationController
       render :text => "You don't have the permission to delete this task."
     end
   end
+
+  def update_complete
+    @task = Task.find(params[:id])
+    if @task.is_complete == 1
+      @task.is_complete = 0
+    else
+      @task.is_complete = 1
+    end
+
+    @task.save
+    redirect_to tasks_path      
+  end
+  
+  def update_star
+    @task = Task.find(params[:id])
+    if @task.is_starred == 1
+      @task.is_starred = 0
+    else
+      @task.is_starred = 1
+    end
+    @task.save
+    redirect_to tasks_path      
+  end
 end
