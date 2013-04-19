@@ -24,7 +24,8 @@
                   <div class="thumbnail span4 small_box">
                 <% end %>
                 <img src="<%= task.thumbnail_url %>">
-                <h3><%= task.title %> Priority is: <%= task.priority %></h3>
+                <h3><%= link_to task.title, task_path(task.id) %></h3>
+                <h5>Priority is: <%= task.priority %></h5>
                 </div>
               </li>
               <% end %> 
@@ -42,7 +43,8 @@
                   <div class="thumbnail span4 small_box">
                 <% end %>
                 <img src="<%= task.thumbnail_url %>">
-                <h3><%= task.title %> Priority is: <%= task.priority %></h3>
+                <h3><%= link_to task.title, task_path(task.id)  %></h3>
+                <h5>Priority is: <%= task.priority %></h5>
                 </div>
               </li>
               <% end %> 
@@ -60,7 +62,8 @@
                   <div class="thumbnail span4 small_box">
                 <% end %>
                 <img src="<%= task.thumbnail_url %>">
-                <h3><%= task.title %> Priority is: <%= task.priority %></h3>
+                <h3><%= link_to task.title, task_path(task.id) %></h3>
+                <h5>Priority is: <%= task.priority %></h5>
                 </div>
               </li>
               <% end %>   
