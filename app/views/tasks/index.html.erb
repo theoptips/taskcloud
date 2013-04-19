@@ -34,19 +34,17 @@
 				<div class="span6">
 					<div>
 						<% if task.is_complete != 1 %>
-					
 							<%= link_to image_tag('', :class=>'checkbox_img', :id => 'checkbox_img'), taskupdate_path(task.id) %>
 						<% else %>
-							
 							<%= link_to image_tag('/assets/complete.png', :class=>'checkbox_img'), taskupdate_path(task.id) %>
 						<% end %>
+
 						<% if task.is_starred != 1 %>
-							
 							<%= link_to image_tag('/assets/blank_star.png', :class=>'checkbox_img'), taskstar_path(task.id) %>
-						<% else %>
-							
+						<% else %>	
 							<%= link_to image_tag('/assets/star.png', :class=>'checkbox_img'), taskstar_path(task.id) %>
 						<% end %>				
+
 						<h5><%= task.title%></h5>
 					</div>
 	
